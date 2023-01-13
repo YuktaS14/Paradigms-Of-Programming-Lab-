@@ -1,0 +1,31 @@
+(*Q1*)
+
+datatype Expr = Const of real
+	       |Var of string
+	       |Plus of Expr * Expr
+	       |Mul of Expr * Expr
+
+datatype Stmt = Assign of string * Expr
+	       |Print of Expr
+
+type Program = Stmt list
+
+
+
+(*Q2*)
+
+type Env = real AtomMap.map
+		
+(* val eval      : Env -> Expr -> real option
+    (* Evaluates an expression. The result is real option to take care of
+	   cases when there are undefined variables *)
+   val execute   : Env -> Stmt -> Env
+    (* Executes a single statement and returns the modified environment *)
+   
+   val interpret : Program -> unit
+    (* Run the program starting with an empty environment
+	This is essentially a fold from the left.*)
+ *)
+
+val eval env ( 
+		
